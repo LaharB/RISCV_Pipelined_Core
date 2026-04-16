@@ -1,7 +1,7 @@
 module Main_Decoder(
     input [6:0] op,
     input zero,
-    output RegWrite, MemWrite, ALUSrc, Branch, //PCSrc,
+    output RegWrite, MemWrite, ALUSrc, Branch, Jump, //PCSrc,
     output [1:0] ImmSrc, ResultSrc, ALUOp    
     );
     
@@ -36,6 +36,8 @@ module Main_Decoder(
     assign Branch = (op == 7'b1100011) ? 1'b1 : 1'b0;
 
     assign ALUOp = ((op == 7'b0110011) || (op = 7'b0010011)) ? 2'b10 : (op == 7'b1100011) ? 2'b01 : ((op == 7'b0000011) || (op == 7'b0100011)) ? 2'b00 : 2'bxx;
+
+    assign Jump = (op == 7'b1101111) ? 1'b1 : 1'b0; 
 
     //assign PCSrc = zero & Branch; 
   
