@@ -14,12 +14,11 @@ module Decode_Stage(
     input [31:0] ResultW,
 
     //going to Execute Stage
-    output RegWriteE, MemWriteE, JumpE, BranchE, , ALUSrcE,
+    output RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE,
     output [1:0] ResultSrcE,
     output [2:0] ALUControlE,
     
-    output [31:0] RD1E, RD2E, ImmExtE
-    //output [4:0] RS1E, RS2E, //signals for hazard unit 
+    output [31:0] RD1E, RD2E, ImmExtE 
     output [4:0] RdE,
     output [31:0] PCE, PCPlus4E,
 );
@@ -123,6 +122,5 @@ module Decode_Stage(
     assign RdE = RdD_reg;
     assign PCE = PCD_reg; 
     assign PCPlus4E =PCPlus4D_reg;
-
     
 endmodule
