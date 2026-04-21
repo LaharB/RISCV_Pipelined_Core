@@ -15,8 +15,8 @@ module Fetch_Stage(
     output [31:0] PCD, PCPlus4D
 );
     //wires
-    wire [31:0] PCF_, PCF, PCPlus4F, 
-    wire [31:0] InstrF,
+    wire [31:0] PCF_, PCF, PCPlus4F;
+    wire [31:0] InstrF;
 
     //Fetch Stage Registers
     reg [31:0] InstrF_reg;

@@ -9,7 +9,7 @@ module Execute_Stage(
     input RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE,
     input [1:0] ResultSrcE,
     input  [2:0] ALUControlE,
-    input  [31:0] RD1E, RD2E, ImmExtE 
+    input  [31:0] RD1E, RD2E, ImmExtE, 
     input [4:0] RdE,
     input [31:0] PCE, PCPlus4E,
 
@@ -31,8 +31,8 @@ module Execute_Stage(
     //EXECUTE Stage Registers
     reg RegWriteE_reg, MemWriteE_reg;
     reg [1:0] ResultSrcE_reg;
-    reg [31:0] ALUResultE_reg, RD2E_reg, PCPlus4E_reg;
-    reg [4:0] WriteDataE_reg; //to store RD2E value 
+    reg [31:0] ALUResultE_reg, WriteDataE_reg, PCPlus4E_reg; //WriteDataE_reg to store RD2E value
+    reg [4:0] RdE_reg;  
 
     //Mux_2to1 module
     Mux_2to1 Mux_SrcBE(
@@ -43,7 +43,7 @@ module Execute_Stage(
     );
 
     //PC_Adder module
-    PC_Adder PCTargetE(
+    PC_Adder PCTargetE_Adder(
         .a(PCE), 
         .b(ImmExtE),
         .c(PCTargetE)
@@ -68,7 +68,7 @@ module Execute_Stage(
             MemWriteE_reg <= 1'b0;
             ResultSrcE_reg <= 2'b00;
             ALUResultE_reg <= 32'h0000_0000; 
-            RD2E_reg <= 32'h0000_0000; 
+            WriteDataE_reg <= 32'h0000_0000; 
             PCPlus4E_reg <= 32'h0000_0000;
             RdE_reg <= 5'h00;
         end 
@@ -76,7 +76,7 @@ module Execute_Stage(
             RegWriteE_reg <= RegWriteE; 
             MemWriteE_reg <= MemWriteE;
             ResultSrcE_reg <= ResultSrcE;
-            ALUResultE_reg <= ALUResultE; 
+            ALUResultE_reg <= ALUResultE_wire; 
             WriteDataE_reg <= RD2E; 
             PCPlus4E_reg <= PCPlus4E;
             RdE_reg <= RdE;
@@ -91,7 +91,7 @@ module Execute_Stage(
 
     //Passing values from EXECUTE Registers to MEMORY Stage
     assign RegWriteM = RegWriteE_reg;
-    assign WriteMemM = WriteMemE_reg;
+    assign MemWriteM = MemWriteE_reg;
     assign ResultSrcM = ResultSrcE_reg;
     assign ALUResultM = ALUResultE_reg;
     assign WriteDataM = WriteDataE_reg;

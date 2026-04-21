@@ -18,9 +18,9 @@ module Decode_Stage(
     output [1:0] ResultSrcE,
     output [2:0] ALUControlE,
     
-    output [31:0] RD1E, RD2E, ImmExtE 
+    output [31:0] RD1E, RD2E, ImmExtE,  
     output [4:0] RdE,
-    output [31:0] PCE, PCPlus4E,
+    output [31:0] PCE, PCPlus4E
 );
     //wires
     wire RegWriteD, MemWriteD, ALUSrcD, BranchD, JumpD;
@@ -83,7 +83,7 @@ module Decode_Stage(
                 JumpD_reg <= 1'b0;
                 ALUControlD_reg <= 3'b000;
                 RD1D_reg <= 32'h0000_0000; 
-                RD2D_reg <= 32'h0000_0000, 
+                RD2D_reg <= 32'h0000_0000; 
                 ImmExtD_reg <= 32'h0000_0000;
                 RdD_reg <= 5'h00;  
                 PCD_reg <= 32'h0000_0000; 
@@ -94,12 +94,12 @@ module Decode_Stage(
                 RegWriteD_reg <= RegWriteD; 
                 MemWriteD_reg <= MemWriteD; 
                 ALUSrcD_reg <= ALUSrcD; 
-                ResultSrcD_reg <= 'ResultSrcD;
+                ResultSrcD_reg <= ResultSrcD;
                 BranchD_reg <= BranchD; 
                 JumpD_reg <= JumpD;
                 ALUControlD_reg <= ALUControlD;
                 RD1D_reg <= RD1D_wire; 
-                RD2D_reg <= RD2D_wire, 
+                RD2D_reg <= RD2D_wire; 
                 ImmExtD_reg <= ImmExtD_wire;
                 RdD_reg <= InstrD[11:7];  
                 PCD_reg <= PCD; 

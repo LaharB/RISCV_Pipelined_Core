@@ -48,7 +48,7 @@ module Memory_Stage(
             RegWriteM_reg <= RegWriteM;
             ResultSrcM_reg <= ResultSrcM;
             ALUResultM_reg <= ALUResultM; 
-            ReadDataM_reg <= ReadDataM_wire, 
+            ReadDataM_reg <= ReadDataM_wire; 
             PCPlus4M_reg <= PCPlus4M;
             RdM_reg <= RdM;
         end

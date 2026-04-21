@@ -19,7 +19,6 @@ module Control_Unit(
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc), 
         .ResultSrc(ResultSrc), 
-        .PCSrc(PCSrc),
         .ImmSrc(ImmSrc), 
         .ALUOp(ALUOp) 
     );

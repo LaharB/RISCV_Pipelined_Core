@@ -1,8 +1,9 @@
-`include "Fetch_Stage.v";
-`include "Decode_Stage.v";
-`include "Execute_Stage.v";
-`include "Memory_Stage.v";
-`include "Writeback_Stage.v";
+`include "Fetch_Stage.v"
+`include "Decode_Stage.v"
+`include "Execute_Stage.v"
+`include "Memory_Stage.v"
+`include "Writeback_Stage.v"
+
 
 module Pipelined_top(
     input clk, rst      
@@ -34,7 +35,7 @@ module Pipelined_top(
         .PCPlus4D(PCPlus4D_wire),
         .RegWriteW(RegWriteW_wire), 
         .RdW(RdW_wire),
-        .ResultW(ResultW_wire)
+        .ResultW(ResultW_wire),
         .RegWriteE(RegWriteE_wire), 
         .MemWriteE(MemWriteE_wire), 
         .JumpE(JumpE_wire), 
