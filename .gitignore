@@ -23,9 +23,12 @@ transcript
 # Ignore waveform simulation data files (these are huge)
 *.wlf
 wlft*
+# *.do
 
 # Ignore compilation databases and temporary files
 *.vstf
 *.mpf
 *.mti
+*.dbg
+*.bak
 modelsim.ini
