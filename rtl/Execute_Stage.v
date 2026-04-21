@@ -14,7 +14,7 @@ module Execute_Stage(
     input [31:0] PCE, PCPlus4E,
 
     //going to Memory Stage
-    output RegWriteM, WriteMemM,
+    output RegWriteM, MemWriteM,
     output [1:0] ResultSrcM,
     output [31:0] ALUResultM, WriteDataM, PCPlus4M,
     output [4:0] RdM,
@@ -29,7 +29,7 @@ module Execute_Stage(
     wire and_to_or_wire; 
 
     //EXECUTE Stage Registers
-    reg RegWriteE_reg, WriteMemE_reg;
+    reg RegWriteE_reg, MemWriteE_reg;
     reg [1:0] ResultSrcE_reg;
     reg [31:0] ALUResultE_reg, RD2E_reg, PCPlus4E_reg;
     reg [4:0] WriteDataE_reg; //to store RD2E value 
@@ -65,7 +65,7 @@ module Execute_Stage(
     always@(posedge clk or negedge rst) begin
         if(!rst) begin
             RegWriteE_reg <= 1'b0; 
-            WriteMemE_reg <= 1'b0;
+            MemWriteE_reg <= 1'b0;
             ResultSrcE_reg <= 2'b00;
             ALUResultE_reg <= 32'h0000_0000; 
             RD2E_reg <= 32'h0000_0000; 
@@ -74,7 +74,7 @@ module Execute_Stage(
         end 
         else begin
             RegWriteE_reg <= RegWriteE; 
-            WriteMemE_reg <= WriteMemE;
+            MemWriteE_reg <= MemWriteE;
             ResultSrcE_reg <= ResultSrcE;
             ALUResultE_reg <= ALUResultE; 
             WriteDataE_reg <= RD2E; 
@@ -83,11 +83,6 @@ module Execute_Stage(
         end
     end
     
-    reg RegWriteE_reg, WriteMemE_reg;
-    reg [1:0] ResultSrcE_reg;
-    reg [31:0] ALUResultE_reg, RD2E_reg, PCPlus4E_reg,
-    reg [4:0] RdE_reg,
-
     //and gate 
     assign and_to_or_wire = ZeroE & BranchE;
 
