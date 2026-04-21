@@ -24,7 +24,8 @@ module Decode_Stage(
     output [31:0] PCE, PCPlus4E,
 );
     //wire
-    wire 
+    wire RegWrite, MemWrite, ALUSrc, ResultSrc, Jump
+    wire [1:0] 
 
 
 
@@ -34,7 +35,7 @@ module Decode_Stage(
         .Op(InstrD[6:0]), 
         .funct7(InstrD[31:25]),
         .funct3(InstrD[14:12]),
-        .Zero(), 
+        //.Zero(), 
         .RegWrite(), 
         .MemWrite(), 
         .ALUSrc(), 

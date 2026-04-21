@@ -4,10 +4,9 @@
 module Control_Unit(
     input [6:0] Op, funct7,
     input [2:0] funct3,
-    //input Zero, 
-
-    output RegWrite, MemWrite, ALUSrc, ResultSrc, PCSrc,
-    output [1:0] ImmSrc,
+    //input Zero, //input zero flag comes from ALU in Execute Stage  
+    output RegWrite, MemWrite, ALUSrc, Branch, Jump,
+    output [1:0] ImmSrc, ResultSrc, 
     output [2:0] ALUControl
 );
 
@@ -15,7 +14,7 @@ module Control_Unit(
 
     Main_Decoder Main_Decoder(
         .op(Op),
-        //.zero(Zero),
+        //.zero(Zero), 
         .RegWrite(RegWrite),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc), 
