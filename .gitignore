@@ -31,4 +31,5 @@ wlft*
 *.mti
 *.dbg
 *.bak
+*.vcd
 modelsim.ini
