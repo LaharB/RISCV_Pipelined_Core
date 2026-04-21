@@ -102,14 +102,27 @@ module Decode_Stage(
                 RD1D_reg <= RD1D_wire; 
                 RD2D_reg <= RD2D_wire, 
                 ImmExtD_reg <= ImmExtD_wire;
-                RdD_reg <= Instr[11:7];  
+                RdD_reg <= InstrD[11:7];  
                 PCD_reg <= PCD; 
                 PCPlus4D_reg <= PCPlus4D;
             end
 
     end
-    //passing the values from  DECODE Stage Registers to EXECUTE Stage
 
+    //passing the values from  DECODE Stage Registers to EXECUTE Stage
+    assign RegWriteE = RegWriteD_reg ; 
+    assign MemWriteE = MemWriteD_reg; 
+    assign JumpE = JumpD_reg; 
+    assign BranchE = BranchD_reg;  
+    assign ALUSrcE = ALUSrcD_reg;
+    assign ResultSrcE = ResultSrcD_reg; 
+    assign ALUControlE = ALUControlD_reg; 
+    assign RD1E = RD1D_reg; 
+    assign RD2E = RD1D_reg; 
+    assign ImmExtE = ImmExtD_reg; 
+    assign RdE = RdD_reg;
+    assign PCE = PCD_reg; 
+    assign PCPlus4E =PCPlus4D_reg;
 
     
 endmodule
