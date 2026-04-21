@@ -5,7 +5,7 @@
 module Decode_Stage(
     input clk, rst,
 
-    //from Decode Stage
+    //from Fetch Stage
     input [31:0] InstrD, PCD, PCPlus4D,
 
     //from Writeback Stage
