@@ -1,6 +1,6 @@
 module Main_Decoder(
     input [6:0] op,
-    input zero,
+    //input zero,
     output RegWrite, MemWrite, ALUSrc, Branch, Jump, //PCSrc,
     output [1:0] ImmSrc, ResultSrc, ALUOp    
     );

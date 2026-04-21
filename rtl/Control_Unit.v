@@ -4,7 +4,7 @@
 module Control_Unit(
     input [6:0] Op, funct7,
     input [2:0] funct3,
-    input Zero, 
+    //input Zero, 
 
     output RegWrite, MemWrite, ALUSrc, ResultSrc, PCSrc,
     output [1:0] ImmSrc,
@@ -15,7 +15,7 @@ module Control_Unit(
 
     Main_Decoder Main_Decoder(
         .op(Op),
-        .zero(Zero),
+        //.zero(Zero),
         .RegWrite(RegWrite),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc), 

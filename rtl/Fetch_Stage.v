@@ -5,7 +5,7 @@
 
 module Fetch_Stage(
     input clk,rst,
-
+    
     //coming from Execute stage
     input PCSrcE,
     input [31:0] PCTargetE, 
@@ -52,7 +52,7 @@ module Fetch_Stage(
         .c(PCPlus4F)
     );
 
-    //Passing the values inside Fetch Stage Registers
+    //Passing the values to Fetch Stage Registers
     always@(posedge clk or negedge rst) begin
         if(!rst) //active low reset 
             begin
