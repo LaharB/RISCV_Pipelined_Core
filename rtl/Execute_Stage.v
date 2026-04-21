@@ -94,7 +94,7 @@ module Execute_Stage(
     //or gate
     assign PCSrcE = JumpE | and_to_or_wire; 
 
-    //Passing values from EXECUTE Registers to WRITEBACK Stage
+    //Passing values from EXECUTE Registers to MEMORY Stage
     assign RegWriteM = RegWriteE_reg;
     assign WriteMemM = WriteMemE_reg;
     assign ResultSrcM = ResultSrcE_reg;
