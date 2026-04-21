@@ -52,17 +52,23 @@ module Fetch_Stage(
         .c(PCPlus4F)
     );
 
-    //Passing the values to Fetch Stage Registers
+    //storing the values to Fetch Stage Registers
     always@(posedge clk or negedge rst) begin
         if(!rst) //active low reset 
             begin
+               InstrF_reg <= 32'h0000;
+               PCF_reg <= 32'h0000;
+               PCPlus4F_reg <= 32'h0004; 
+            end
+        else 
+            begin
                InstrF_reg <= InstrF;
-               PCF_reg <= PCF, 
+               PCF_reg <= PCF; 
                PCPlus4F_reg <= PCPlus4F; 
             end
     end    
 
-    //Passing from FETCH Stage Regsiters to DECODE Stage
+    //Passing from FETCH Stage Registers to DECODE Stage
     assign InstrD = (!rst) ? 32'h0000_0000 : InstrF_reg;
     assign PCD = (!rst) ? 32'h0000_0000 : PCF_reg;
     assign PCPlus4D = (!rst) ? 32'h0000_0000 : PCPlus4F_reg;
