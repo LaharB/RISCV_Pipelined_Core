@@ -10,7 +10,7 @@ module Decode_Stage(
 
     //from Writeback Stage
     input RegWriteW, 
-    input [5:0] RdW,
+    input [4:0] RdW,
     input [31:0] ResultW,
 
     //going to Execute Stage

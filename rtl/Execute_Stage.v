@@ -24,8 +24,8 @@ module Execute_Stage(
     output [31:0] PCTargetE   
 );
     //wires
-    wire SrcB_wire, ZeroE, CarryE, OverflowE, NegativeE;
-    wire [31:0] ALUResultE_wire;
+    wire ZeroE, CarryE, OverflowE, NegativeE;
+    wire [31:0] ALUResultE_wire, SrcB_wire; 
     wire and_to_or_wire; 
 
     //EXECUTE Stage Registers
