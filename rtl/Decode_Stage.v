@@ -58,7 +58,7 @@ module Decode_Stage(
         .WE3(RegWriteW),
         .A1(InstrD[19:15]), 
         .A2(InstrD[24:20]), 
-        .A3(RDW),
+        .A3(RdW),
         .WD3(ResultW),
         .RD1(RD1D_wire), 
         .RD2(RD2D_wire)

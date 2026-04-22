@@ -15,7 +15,7 @@ module Writeback_Stage(
         .b(ReadDataW), 
         .c(PCPlus4W),
         .sel(ResultSrcW),
-        .y(RdW)
+        .y(ResultW)
     );
 
 endmodule

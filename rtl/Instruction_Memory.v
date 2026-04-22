@@ -27,15 +27,13 @@ module Instruction_Memory(
     
 
     //loading instructions at specific addresses manually
-    initial begin
+    //initial begin
         //mem[0] = 32'hFFC4A303;
         //mem[1] = 32'h00832383;
-        mem[0] = 32'hFE54AE23; // sw x5, -4(x9)
-        mem[1] = 32'hFFC4A303; // sw x5, -4(x9)
+        //mem[0] = 32'hFE54AE23; // sw x5, -4(x9)
+        //mem[1] = 32'hFFC4A303; // sw x5, -4(x9)
         //mem[0] = 32'h0062E233;
         //mem[1] = 32'h00B62423;
-
-
-    end
+    //end
     
 endmodule
