@@ -20,8 +20,6 @@ module tb();
         #200;
         rst = 1'b1;
         #1000;
-        rst = 1'b0;
-        #100;
         $finish;
     end
 
