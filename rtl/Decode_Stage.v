@@ -1,7 +1,3 @@
-`include "Register_File.v"
-`include "Control_Unit.v"
-`include "Extend.v"
-
 module Decode_Stage(
     input clk, rst,
 

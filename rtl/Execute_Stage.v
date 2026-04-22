@@ -1,7 +1,3 @@
-`include "Mux_2to1.v"
-`include "PC_Adder.v"
-`include "ALU.v"
-
 module Execute_Stage(
     input clk, rst,
     

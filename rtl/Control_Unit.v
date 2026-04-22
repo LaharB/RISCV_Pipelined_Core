@@ -13,14 +13,15 @@ module Control_Unit(
     wire [1:0] ALUOp;
 
     Main_Decoder Main_Decoder(
-        .op(Op),
-        //.zero(Zero), 
+        .op(Op), 
         .RegWrite(RegWrite),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc), 
         .ResultSrc(ResultSrc), 
         .ImmSrc(ImmSrc), 
-        .ALUOp(ALUOp) 
+        .ALUOp(ALUOp),
+        .Branch(Branch),
+        .Jump(Jump)
     );
 
     ALU_Decoder ALU_Decoder(

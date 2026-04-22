@@ -26,11 +26,10 @@ module Register_File(
         end
 
     //manually putting random values inside registers for A1 and A2 location since we have not implemeted ADDI functionality
-    // initial begin
+    initial begin
+           Registers[0] = 32'h0000_0000; 
     //     Registers[5] = 32'h0000_0015; //A1 = 5 , put 5 in it
     //     Registers[9] = 32'h0000_0040;  //A2 = 6, put 4 in it
-    // end
-
-    
-    
+    end
+       
 endmodule

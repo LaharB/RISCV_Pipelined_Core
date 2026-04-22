@@ -1,5 +1,3 @@
-`include "Mux_3to1.v"
-
 module Writeback_Stage(
     //coming to MEMORY Stage
     input [1:0] ResultSrcW,

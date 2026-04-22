@@ -1,5 +1,3 @@
-`include "Data_Memory.v"
-
 module Memory_Stage(
     input clk, rst,
 

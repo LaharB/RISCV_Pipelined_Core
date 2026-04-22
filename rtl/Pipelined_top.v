@@ -3,7 +3,16 @@
 `include "Execute_Stage.v"
 `include "Memory_Stage.v"
 `include "Writeback_Stage.v"
-
+`include "Instruction_Memory.v"
+`include "Mux_2to1.v"
+`include "PC.v"
+`include "PC_Adder.v"
+`include "Register_File.v"
+`include "Control_Unit.v"
+`include "Extend.v"
+`include "ALU.v"
+`include "Data_Memory.v"
+`include "Mux_3to1.v"
 
 module Pipelined_top(
     input clk, rst      

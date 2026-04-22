@@ -1,8 +1,3 @@
-`include "Instruction_Memory.v"
-`include "Mux_2to1.v"
-`include "PC.v"
-`include "PC_Adder.v"
-
 module Fetch_Stage(
     input clk,rst,
     
