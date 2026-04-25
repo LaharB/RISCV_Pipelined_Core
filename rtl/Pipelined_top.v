@@ -133,8 +133,8 @@ module Pipelined_top(
         .RdW(RdW_wire), 
         .Rs1E(Rs1E_wire), 
         .Rs2E(Rs2E_wire),
-        .ForwardAE(), 
-        .ForwardBE()
+        .ForwardAE(ForwardAE_wire), 
+        .ForwardBE(ForwardBE_wire)
     );
 
 endmodule
