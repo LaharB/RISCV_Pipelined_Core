@@ -12,6 +12,9 @@ module Execute_Stage(
     //from Writeback Stage
     input [31:0] ResultW;
 
+    //from Hazard_Unit
+    input [1:0] ForwardAE, ForwardBE,
+
     //going to Memory Stage
     output RegWriteM, MemWriteM,
     output [1:0] ResultSrcM,
@@ -41,7 +44,7 @@ module Execute_Stage(
     );
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
-        
+
     );
 
 ////////////////////////////////////////////
