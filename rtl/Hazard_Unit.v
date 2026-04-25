@@ -1,6 +1,6 @@
 module Hazard_Unit(
-    input a,b,
-    output c
+    input rst, RegWiteM, RegWriteM,
+    input [4:0] RdM, 
 );
 
     wire ;
