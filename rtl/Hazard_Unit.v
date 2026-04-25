@@ -1,7 +1,7 @@
 module Hazard_Unit(
     input rst, RegWiteM, RegWriteM,
     input [4:0] RdM, RdW, Rs1E, Rs2E,
-    output ForwardAE, ForwardBE
+    output [1:0] ForwardAE, ForwardBE
 );
 
     assign ForwardAE = (!rst)? 2'b00 : 

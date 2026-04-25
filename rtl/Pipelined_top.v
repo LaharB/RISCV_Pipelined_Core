@@ -26,7 +26,6 @@ module Pipelined_top(
     wire [4:0] RdW_wire, RdE_wire, RdM_wire;
 
     //wires for Hazard Unit
-    
     wire [4:0]
 
     //Fetch_Stage module 
