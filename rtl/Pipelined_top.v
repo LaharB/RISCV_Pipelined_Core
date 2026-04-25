@@ -13,6 +13,7 @@
 `include "ALU.v"
 `include "Data_Memory.v"
 `include "Mux_3to1.v"
+`include "Hazard_Unit.v"
 
 module Pipelined_top(
     input clk, rst      
@@ -23,6 +24,10 @@ module Pipelined_top(
     wire [2:0] ALUControlE_wire;
     wire [31:0] PCTargetE_wire, InstrD_wire, PCD_wire, PCPlus4D_wire, ResultW_wire, RD1E_wire, RD2E_wire, ImmExtE_wire, PCE_wire, PCPlus4E_wire, ALUResultM_wire, WriteDataM_wire, PCPlus4M_wire, ALUResultW_wire, ReadDataW_wire, PCPlus4W_wire;
     wire [4:0] RdW_wire, RdE_wire, RdM_wire;
+
+    //wires for Hazard Unit
+    
+    wire [4:0]
 
     //Fetch_Stage module 
     Fetch_Stage Fetch_Stage(
@@ -115,5 +120,8 @@ module Pipelined_top(
         .PCPlus4W(PCPlus4W_wire),
         .ResultW(ResultW_wire)
     );
+
+    //Hazard_Unit module
+
 
 endmodule
