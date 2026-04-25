@@ -9,6 +9,9 @@ module Execute_Stage(
     input [4:0] RdE,
     input [31:0] PCE, PCPlus4E,
 
+    //from Writeback Stage
+    input [31:0] ResultW;
+
     //going to Memory Stage
     output RegWriteM, MemWriteM,
     output [1:0] ResultSrcM,
@@ -29,6 +32,17 @@ module Execute_Stage(
     reg [1:0] ResultSrcE_reg;
     reg [31:0] ALUResultE_reg, WriteDataE_reg, PCPlus4E_reg; //WriteDataE_reg to store RD2E value
     reg [4:0] RdE_reg;  
+
+    //for Hazard_Unit
+    //Mux_3to1 module
+    Mux_3to1 Mux_SrcAE(
+
+    );
+
+    //Mux_3to1 module
+    Mux_3to1 Mux_3to1_to_Mux_2to1(
+        
+    );
 
     //Mux_2to1 module
     Mux_2to1 Mux_SrcBE(
