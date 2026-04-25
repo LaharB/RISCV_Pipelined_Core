@@ -27,6 +27,7 @@ module Pipelined_top(
 
     //wires for Hazard Unit
     wire [4:0] Rs1E_wire, Rs2E_wire;
+    wire [1:0] ForwardAE_wire, ForwardBE_wire;
 
     //Fetch_Stage module 
     Fetch_Stage Fetch_Stage(
@@ -62,6 +63,7 @@ module Pipelined_top(
         .RdE(RdE_wire),
         .PCE(PCE_wire), 
         .PCPlus4E(PCPlus4E_wire)
+        //for Hazarz_Unit
         .Rs1E(Rs1E_wire),
         .Rs2E(Rs2E_wire)
     );
@@ -124,11 +126,11 @@ module Pipelined_top(
 
     //Hazard_Unit module
     Hazard_Unit Hazard_Unit(
-        .rst(), 
-        .RegWiteM(), 
-        .RegWriteM(),
-        .RdM(), 
-        .RdW(), 
+        .rst(rst), 
+        .RegWiteM(RegWriteM_wire), 
+        .RegWriteM(RegWriteW_wire),
+        .RdM(RdM_wire), 
+        .RdW(RdW_wire), 
         .Rs1E(Rs1E_wire), 
         .Rs2E(Rs2E_wire),
         .ForwardAE(), 
