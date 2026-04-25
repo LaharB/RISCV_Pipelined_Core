@@ -34,7 +34,7 @@ module Decode_Stage(
     reg [4:0] RdD_reg;  
     reg [31:0] PCD_reg, PCPlus4D_reg;
     //Registers for Hazard_Unit signals
-    reg [4:0] Rs1D_reg, Rs2_reg;
+    reg [4:0] Rs1D_reg, Rs2D_reg;
 
 
     //Control_Unit module
@@ -89,6 +89,10 @@ module Decode_Stage(
                 RdD_reg <= 5'h00;  
                 PCD_reg <= 32'h0000_0000; 
                 PCPlus4D_reg <= 32'h0000_0000;
+                //for Hazard_Unit
+                Rs1D_reg <= 5'h00; 
+                Rs2D_reg <= 5'h00;
+
             end 
         else
             begin
@@ -105,8 +109,10 @@ module Decode_Stage(
                 RdD_reg <= InstrD[11:7];  
                 PCD_reg <= PCD; 
                 PCPlus4D_reg <= PCPlus4D;
+                //for Hazard_Unit
+                Rs1D_reg <= InstrD[19:15]; 
+                Rs2D_reg <= InstrD[24:20];
             end
-
     end
 
     //passing the values from  DECODE Stage Registers to EXECUTE Stage
@@ -123,5 +129,8 @@ module Decode_Stage(
     assign RdE = RdD_reg;
     assign PCE = PCD_reg; 
     assign PCPlus4E =PCPlus4D_reg;
+    //for Hazard_Unit
+    assign Rs1E = Rs1D_reg;
+    assign Rs2E = Rs2D_reg;
     
 endmodule
