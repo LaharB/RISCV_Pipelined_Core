@@ -33,17 +33,18 @@ module Execute_Stage(
     reg [31:0] ALUResultE_reg, WriteDataE_reg, PCPlus4E_reg; //WriteDataE_reg to store RD2E value
     reg [4:0] RdE_reg;  
 
+/////////////////////////////////////////////
     //for Hazard_Unit
     //Mux_3to1 module
     Mux_3to1 Mux_SrcAE(
 
     );
-
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
         
     );
 
+////////////////////////////////////////////
     //Mux_2to1 module
     Mux_2to1 Mux_SrcBE(
         .a(RD2E), 
