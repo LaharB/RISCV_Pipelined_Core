@@ -121,6 +121,16 @@ module Pipelined_top(
     );
 
     //Hazard_Unit module
-
+    Hazard_Unit Hazard_Unit(
+        .rst(), 
+        .RegWiteM(), 
+        .RegWriteM(),
+        .RdM(), 
+        .RdW(), 
+        .Rs1E(), 
+        .Rs2E(),
+        .ForwardAE(), 
+        .ForwardBE()
+    );
 
 endmodule
