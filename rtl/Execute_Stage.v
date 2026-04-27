@@ -70,7 +70,7 @@ module Execute_Stage(
     //ALU module 
     ALU ALU(
         .SrcA(),
-        .SrcB(SrcB_wire),
+        .SrcB(),
 	    .ALUControl(ALUControlE), 
 	    .Carry(CarryE), 
         .Overflow(OverflowE), 
