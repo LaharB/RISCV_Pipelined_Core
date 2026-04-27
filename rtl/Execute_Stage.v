@@ -14,7 +14,6 @@ module Execute_Stage(
 
     //from Hazard_Unit
     input [1:0] ForwardAE, ForwardBE,
-    
 
     //going to Memory Stage
     output RegWriteM, MemWriteM,
