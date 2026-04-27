@@ -4,8 +4,8 @@ module Execute_Stage(
     //from Decode Stage
     input RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE,
     input [1:0] ResultSrcE,
-    input  [2:0] ALUControlE,
-    input  [31:0] RD1E, RD2E, ImmExtE, 
+    input [2:0] ALUControlE,
+    input [31:0] RD1E, RD2E, ImmExtE, 
     input [4:0] RdE,
     input [31:0] PCE, PCPlus4E,
 
@@ -48,7 +48,11 @@ module Execute_Stage(
     );
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
-
+        .a(RD2E), 
+        .b(), 
+        .c(),
+        .sel(ForwardBE),
+        .y()
     );
 
 ////////////////////////////////////////////
