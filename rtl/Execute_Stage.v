@@ -41,8 +41,8 @@ module Execute_Stage(
     //Mux_3to1 module
     Mux_3to1 Mux_SrcAE(
         .a(RD1E), 
-        .b(), 
-        .c(),
+        .b(ResultW), 
+        .c(ALUResultM),
         .sel(ForwardAE),
         .y()
     );
@@ -69,7 +69,7 @@ module Execute_Stage(
 
     //ALU module 
     ALU ALU(
-        .SrcA(RD1E),
+        .SrcA(),
         .SrcB(SrcB_wire),
 	    .ALUControl(ALUControlE), 
 	    .Carry(CarryE), 
