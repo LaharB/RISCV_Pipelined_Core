@@ -95,9 +95,9 @@ module Pipelined_top(
         .PCSrcE(PCSrcE_wire),
         .PCTargetE(PCTargetE_wire)
         //for Hazard_Unit
-        .ResultW(),
-        .ForwardAE(), 
-        .ForwardBE()
+        .ResultW(ResultW_wire),
+        .ForwardAE(ForwardAE_wire), 
+        .ForwardBE(ForwardBE_wire)
     );
 
     //Memory_Stage module
