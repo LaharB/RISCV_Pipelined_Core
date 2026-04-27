@@ -27,7 +27,7 @@ module Execute_Stage(
 );
     //wires
     wire ZeroE, CarryE, OverflowE, NegativeE;
-    wire [31:0] ALUResultE_wire, SrcB_wire; 
+    wire [31:0] ALUResultE_wire, SrcAE_wire, SrcBE_wire; 
     wire and_to_or_wire; 
 
     //EXECUTE Stage Registers
@@ -44,7 +44,7 @@ module Execute_Stage(
         .b(ResultW), 
         .c(ALUResultM),
         .sel(ForwardAE),
-        .y()
+        .y(SrcAE_wire)
     );
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
@@ -57,7 +57,7 @@ module Execute_Stage(
         .a(RD2E), 
         .b(ImmExtE),
         .sel(ALUSrcE),
-        .y(SrcB_wire)
+        .y(SrcBE_wire)
     );
 
     //PC_Adder module
@@ -70,7 +70,7 @@ module Execute_Stage(
     //ALU module 
     ALU ALU(
         .SrcA(),
-        .SrcB(),
+        .SrcB(SrcBE_wire),
 	    .ALUControl(ALUControlE), 
 	    .Carry(CarryE), 
         .Overflow(OverflowE), 
