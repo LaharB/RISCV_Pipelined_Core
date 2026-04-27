@@ -14,6 +14,7 @@ module Execute_Stage(
 
     //from Hazard_Unit
     input [1:0] ForwardAE, ForwardBE,
+    
 
     //going to Memory Stage
     output RegWriteM, MemWriteM,
@@ -40,7 +41,11 @@ module Execute_Stage(
     //for Hazard_Unit
     //Mux_3to1 module
     Mux_3to1 Mux_SrcAE(
-
+        .a(RD1E), 
+        .b(), 
+        .c(),
+        .sel(ForwardAE),
+        .y()
     );
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
