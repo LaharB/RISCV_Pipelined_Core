@@ -15,10 +15,9 @@ module Decode_Stage(
     output [2:0] ALUControlE,
     output [31:0] RD1E, RD2E, ImmExtE,  
     output [4:0] RdE,
-    output [31:0] PCE, PCPlus4E
+    output [31:0] PCE, PCPlus4E,
     //output ports for Hazard_unit signals
     output [4:0] Rs1E, Rs2E
-
 );
     //wires
     wire RegWriteD, MemWriteD, ALUSrcD, BranchD, JumpD;
