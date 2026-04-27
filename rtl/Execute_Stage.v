@@ -27,7 +27,7 @@ module Execute_Stage(
 );
     //wires
     wire ZeroE, CarryE, OverflowE, NegativeE;
-    wire [31:0] ALUResultE_wire, SrcAE_wire, SrcBE_wire; 
+    wire [31:0] ALUResultE_wire, SrcAE_wire, SrcBE_wire, WriteDataE_wire; 
     wire and_to_or_wire; 
 
     //EXECUTE Stage Registers
@@ -49,16 +49,16 @@ module Execute_Stage(
     //Mux_3to1 module
     Mux_3to1 Mux_3to1_to_Mux_2to1(
         .a(RD2E), 
-        .b(), 
-        .c(),
+        .b(ResultW), 
+        .c(ALUResultM),
         .sel(ForwardBE),
-        .y()
+        .y(WriteDataE_wire)
     );
 
 ////////////////////////////////////////////
     //Mux_2to1 module
     Mux_2to1 Mux_SrcBE(
-        .a(RD2E), 
+        .a(WriteDataE_wire), 
         .b(ImmExtE),
         .sel(ALUSrcE),
         .y(SrcBE_wire)
@@ -73,7 +73,7 @@ module Execute_Stage(
 
     //ALU module 
     ALU ALU(
-        .SrcA(),
+        .SrcA(SrcAE_wire),
         .SrcB(SrcBE_wire),
 	    .ALUControl(ALUControlE), 
 	    .Carry(CarryE), 
@@ -99,7 +99,7 @@ module Execute_Stage(
             MemWriteE_reg <= MemWriteE;
             ResultSrcE_reg <= ResultSrcE;
             ALUResultE_reg <= ALUResultE_wire; 
-            WriteDataE_reg <= RD2E; 
+            WriteDataE_reg <= WriteDataE_wire; 
             PCPlus4E_reg <= PCPlus4E;
             RdE_reg <= RdE;
         end
