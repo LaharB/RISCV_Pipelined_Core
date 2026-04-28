@@ -10,7 +10,7 @@ module Execute_Stage(
     input [31:0] PCE, PCPlus4E,
 
     //from Writeback Stage
-    input [31:0] ResultW;
+    input [31:0] ResultW,
 
     //from Hazard_Unit
     input [1:0] ForwardAE, ForwardBE,
