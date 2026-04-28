@@ -131,8 +131,8 @@ module Pipelined_top(
     //Hazard_Unit module
     Hazard_Unit Hazard_Unit(
         .rst(rst), 
-        .RegWiteM(RegWriteM_wire), 
-        .RegWriteM(RegWriteW_wire),
+        .RegWriteM(RegWriteM_wire), 
+        .RegWriteW(RegWriteW_wire),
         .RdM(RdM_wire), 
         .RdW(RdW_wire), 
         .Rs1E(Rs1E_wire), 
