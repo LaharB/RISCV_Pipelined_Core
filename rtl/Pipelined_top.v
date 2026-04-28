@@ -62,8 +62,8 @@ module Pipelined_top(
         .ImmExtE(ImmExtE_wire),
         .RdE(RdE_wire),
         .PCE(PCE_wire), 
-        .PCPlus4E(PCPlus4E_wire)
-        //for Hazarz_Unit
+        .PCPlus4E(PCPlus4E_wire),
+        //for Hazard_Unit
         .Rs1E(Rs1E_wire),
         .Rs2E(Rs2E_wire)
     );
