@@ -93,7 +93,7 @@ module Pipelined_top(
         .PCPlus4M(PCPlus4M_wire),
         .RdM(RdM_wire),
         .PCSrcE(PCSrcE_wire),
-        .PCTargetE(PCTargetE_wire)
+        .PCTargetE(PCTargetE_wire),
         //for Hazard_Unit
         .ResultW(ResultW_wire),
         .ForwardAE(ForwardAE_wire), 
