@@ -1,5 +1,5 @@
 module Hazard_Unit(
-    input rst, RegWiteM, RegWriteM,
+    input rst, RegWriteW, RegWriteM,
     input [4:0] RdM, RdW, Rs1E, Rs2E,
     output [1:0] ForwardAE, ForwardBE
 );
