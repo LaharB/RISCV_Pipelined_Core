@@ -26,7 +26,8 @@ module Register_File(
         end
 
     initial begin
-           Registers[0] = 32'h0000_0000; //hardcoding 0th register with value 32'h0000_0000 
+           Registers[0] = 32'h0000_0000; //hardcoding 0th register with value 32'h0000_0000
+           Registers[8] = 32'h0000_0000; 
     end
        
 endmodule
