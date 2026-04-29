@@ -22,7 +22,7 @@ module Instruction_Memory(
     assign RD = (!rst) ? {32{1'b0}} : mem[A[31:2]]; //instruction memory is byte addressable hence PC value is always increment by 4 i.e 3'b100 so ignore bits of the address value A[1:0]
 
     initial begin
-        $readmemh("memfile.hex", mem);
+        $readmemh("memfile2.hex", mem);
     end
     
 
