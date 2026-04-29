@@ -13,7 +13,7 @@ module Data_Memory(
         end
     
     //async READ as we dont want value in location to get overwritten by WRITE before getting READ
-    assign RD = (!rst) ? 32'h0000_0000:mem[A];
+    assign RD = (!rst) ? 32'h0000_0000 : mem[A];
 
     //putting values inside memory locations
     initial begin
