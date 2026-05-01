@@ -23,7 +23,8 @@ transcript
 # Ignore waveform simulation data files (these are huge)
 *.wlf
 wlft*
-# *.do
+wave.do
+wave_HazardUnit.do
 
 # Ignore compilation databases and temporary files
 *.vstf
