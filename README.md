@@ -1,8 +1,8 @@
 The project showcases the design and implementation of a RISC-V Pipelined Core processor with Hazard Unit.
 Following are the types of Instructions supported by the design:
 
-- R-type(add, sub)
-- I-type
+- R-type(add, sub, and, or)
+- I-type(addi, subi, andi, ori, lw)
 - S-type
 - B-type
 - J-type
