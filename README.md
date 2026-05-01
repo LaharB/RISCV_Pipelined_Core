@@ -3,7 +3,7 @@ Following are the types of Instructions supported by the design:
 
 - R-type(add, sub, and, or)
 - I-type(addi, subi, andi, ori, lw)
-- S-type
+- S-type(sw)
 - B-type
 - J-type
 
