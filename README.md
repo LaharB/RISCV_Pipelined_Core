@@ -1,4 +1,4 @@
-# RISC-V Single Cycle Core Implementation
+# RISC-V Pipelined Core Implementation
 
 The project showcases the design and implementation of a RISC-V Pipelined Core processor with Hazard Unit.
 Following are the types of Instructions supported by the design:
