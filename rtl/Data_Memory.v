@@ -18,8 +18,6 @@ module Data_Memory(
 
     //putting values inside memory locations
     initial begin
-        //mem[28] = 32'h0000_0020;     
-        //mem[40] = 32'h0000_0002;
         mem[0] = 32'h0000_0000;
     end
     
