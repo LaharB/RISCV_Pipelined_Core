@@ -9,5 +9,5 @@ Following are the types of Instructions supported by the design:
 - B-type(beq)
 - J-type(jal)
 
-Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling techniques. 
+Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique. 
 The schematic design and simulation has been carried out by using the Siemens Questasim 10.7c Simulator.
