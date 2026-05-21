@@ -1,7 +1,12 @@
 module Hazard_Unit(
     input rst, RegWriteW, RegWriteM,
+    input [1:0] ResultSrcE,
     input [4:0] RdM, RdW, Rs1E, Rs2E,
+    input [4:0] Rs1D, Rs2D,
+    //for forwarding
     output [1:0] ForwardAE, ForwardBE
+    //for stalling
+    output StallF, StallD, FlushE
 );
 
 /*
@@ -17,7 +22,7 @@ module Hazard_Unit(
  * | ForwardB = 01 | MEM/WB   | The second ALU operand is forwarded from data memory or an earlier ALU result.      |
  * ==================================================================================================================
  */
- 
+    //forwarding
     assign ForwardAE = (!rst)? 2'b00 : 
                        ((RegWriteM == 1'b1) && (RdM != 5'h00) && (RdM == Rs1E)) ? 2'b10 : 
                        ((RegWriteW == 1'b1) && (RdW != 5'h00) && (RdW == Rs1E)) ? 2'b01 : 2'b00;
@@ -26,4 +31,12 @@ module Hazard_Unit(
                        ((RegWriteM == 1'b1) && (RdM != 5'h00) && (RdM == Rs2E)) ? 2'b10 : 
                        ((RegWriteW == 1'b1) && (RdW != 5'h00) && (RdW == Rs2E)) ? 2'b01 : 2'b00;
     
+    //stalling for lw 
+    assign StallF = (!rst) ? 1'b0 : 
+                    ((ResultSrcE[0] == 1'b1) && ((Rs1D == RdE) || (Rs2D == RdE))) ? 1'b1 : 1'b0;
+    assign StallD = (!rst) ? 1'b0 : 
+                    ((ResultSrcE[0] == 1'b1) && ((Rs1D == RdE) || (Rs2D == RdE))) ? 1'b1 : 1'b0;
+    assign FlushE = (!rst) ? 1'b0 : 
+                    ((ResultSrcE[0] == 1'b1) && ((Rs1D == RdE) || (Rs2D == RdE))) ? 1'b1 : 1'b0;
+
 endmodule
