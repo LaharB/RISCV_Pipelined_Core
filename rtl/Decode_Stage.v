@@ -9,6 +9,9 @@ module Decode_Stage(
     input [4:0] RdW,
     input [31:0] ResultW,
 
+    //coming from Hazard_unit
+    input FlushE,
+
     //going to Execute Stage
     output RegWriteE, MemWriteE, JumpE, BranchE, ALUSrcE,
     output [1:0] ResultSrcE,
@@ -93,9 +96,27 @@ module Decode_Stage(
                 //for Hazard_Unit
                 Rs1D_reg <= 5'h00; 
                 Rs2D_reg <= 5'h00;
-
-            end 
-        else
+            end
+        else if(FlushE) 
+            begin
+                RegWriteD_reg <= 1'b0; 
+                MemWriteD_reg <= 1'b0; 
+                ALUSrcD_reg <= 1'b0; 
+                ResultSrcD_reg <= 2'b00;
+                BranchD_reg <= 1'b0; 
+                JumpD_reg <= 1'b0;
+                ALUControlD_reg <= 3'b000;
+                RD1D_reg <= 32'h0000_0000; 
+                RD2D_reg <= 32'h0000_0000; 
+                ImmExtD_reg <= 32'h0000_0000;
+                RdD_reg <= 5'h00;  
+                PCD_reg <= 32'h0000_0000; 
+                PCPlus4D_reg <= 32'h0000_0000;
+                //for Hazard_Unit
+                Rs1D_reg <= 5'h00; 
+                Rs2D_reg <= 5'h00;
+            end
+        else 
             begin
                 RegWriteD_reg <= RegWriteD; 
                 MemWriteD_reg <= MemWriteD; 
@@ -134,6 +155,7 @@ module Decode_Stage(
     assign Rs1E = Rs1D_reg;
     assign Rs2E = Rs2D_reg;
     //for stalling
-    assign Rs1D = InstrD[]
+    assign Rs1D = InstrD[19:15];
+    assign Rs2D = InstrD[24:20];
     
 endmodule
