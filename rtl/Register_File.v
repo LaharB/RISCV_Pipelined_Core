@@ -19,7 +19,7 @@ module Register_File(
     assign RD2 = (!rst) ? 32'h0000_0000 : Registers[A2];
 
     //write
-    always@(posedge clk)
+    always@(negedge clk) //changing writeback to happen at negedge in place of posedge of clk
         begin
             if(WE3)
                  Registers[A3] <= WD3;

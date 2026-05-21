@@ -21,7 +21,7 @@ module tb();
         rst = 1'b1;
         //#1000;
         //#1200;
-        #1300; //making it 1300ns so that x10 register gets enough time for updation
+        #1500; //making it 1500ns so that x10 register gets enough time for updation
         $finish;
     end
 
