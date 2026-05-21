@@ -31,8 +31,8 @@ module Main_Decoder(
 
     assign MemWrite = (op == 7'b0100011) ? 1'b1 : 1'b0;
 
-    //last conditon for ResultSrc for sw and beq changed from xx  to 00 as getting error while stalling for x10 register
-    assign ResultSrc = (op == 7'b0000011) ? 2'b01 : ((op == 7'b0110011) || (op == 7'b0010011)) ? 2'b00 : (op == 7'b1101111) ? 2'b10 : 2'b00; 
+    //may change the last conditon for ResultSrc for sw and beq changed from xx to 00 as getting error while stalling for x10 register
+    assign ResultSrc = (op == 7'b0000011) ? 2'b01 : ((op == 7'b0110011) || (op == 7'b0010011)) ? 2'b00 : (op == 7'b1101111) ? 2'b10 : 2'bxx; 
 
     assign Branch = (op == 7'b1100011) ? 1'b1 : 1'b0;
 
