@@ -4,7 +4,7 @@ module Hazard_Unit(
     input [4:0] RdE, RdM, RdW, Rs1E, Rs2E,
     input [4:0] Rs1D, Rs2D,
     //for forwarding
-    output [1:0] ForwardAE, ForwardBE
+    output [1:0] ForwardAE, ForwardBE,
     //for stalling
     output StallF, StallD, FlushE
 );

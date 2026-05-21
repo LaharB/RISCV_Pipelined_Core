@@ -22,7 +22,7 @@ module Decode_Stage(
     //output ports for Hazard_unit signals
     output [4:0] Rs1E, Rs2E,
     //for stalling 
-    output Rs1D, Rs2D 
+    output [4:0] Rs1D, Rs2D 
 );
     //wires
     wire RegWriteD, MemWriteD, ALUSrcD, BranchD, JumpD;

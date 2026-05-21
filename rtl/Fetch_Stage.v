@@ -35,7 +35,7 @@ module Fetch_Stage(
         .PC_Next(PCF_),
         .PC(PCF),
         //from Hazard_Unit
-        .en(StallF),
+        .en(StallF)
     );
 
     //Instruction Memory module

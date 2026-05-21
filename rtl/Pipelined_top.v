@@ -38,10 +38,10 @@ module Pipelined_top(
         .PCTargetE(PCTargetE_wire),
         .InstrD(InstrD_wire),
         .PCD(PCD_wire), 
-        .PCPlus4D(PCPlus4D_wire)
+        .PCPlus4D(PCPlus4D_wire),
         //for Hazard_unit
         .StallF(StallF_wire), 
-        .StallD(StallD_wire),
+        .StallD(StallD_wire)
     );
 
     //Decode_Stage module 
@@ -70,9 +70,9 @@ module Pipelined_top(
         //for Hazard_Unit
         //forwarding 
         .Rs1E(Rs1E_wire),
-        .Rs2E(Rs2E_wire)
+        .Rs2E(Rs2E_wire),
         //stalling
-        .FlushE(FlushE_wire)
+        .FlushE(FlushE_wire),
         .Rs1D(Rs1D_wire), 
         .Rs2D(Rs2D_wire)
     );
