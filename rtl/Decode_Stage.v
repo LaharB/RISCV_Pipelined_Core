@@ -18,6 +18,8 @@ module Decode_Stage(
     output [31:0] PCE, PCPlus4E,
     //output ports for Hazard_unit signals
     output [4:0] Rs1E, Rs2E
+    //for stalling 
+    output Rs1D, Rs2D 
 );
     //wires
     wire RegWriteD, MemWriteD, ALUSrcD, BranchD, JumpD;
@@ -131,5 +133,7 @@ module Decode_Stage(
     //for Hazard_Unit
     assign Rs1E = Rs1D_reg;
     assign Rs2E = Rs2D_reg;
+    //for stalling
+    assign Rs1D = InstrD[]
     
 endmodule

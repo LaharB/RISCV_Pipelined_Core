@@ -1,7 +1,7 @@
 module Instruction_Memory(
     input rst,
     input [31:0] A, //input address port
-    output [31:0] RD //31-bit read port 
+    output [31:0] RD //32-bit read port 
 );
     //instrcution memory of 1024 cells of 32-bits word size
     reg [31:0]mem[0:1023]; 
