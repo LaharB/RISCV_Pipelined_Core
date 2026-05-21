@@ -5,8 +5,10 @@ module Fetch_Stage(
     input PCSrcE,
     input [31:0] PCTargetE, 
 
-    //coming from 
-    
+    //coming from Hazard Unit 
+    input StallF, 
+    input StallD, 
+
     //going to Decode stage
     output [31:0] InstrD, 
     output [31:0] PCD, PCPlus4D
@@ -31,9 +33,10 @@ module Fetch_Stage(
     PC PC(
         .clk(clk), 
         .rst(rst),
-        .en(),
         .PC_Next(PCF_),
         .PC(PCF)
+        //from Hazard_Unit
+        .en(StallF),
     );
 
     //Instruction Memory module
@@ -58,7 +61,7 @@ module Fetch_Stage(
                PCF_reg <= 32'h0000;
                PCPlus4F_reg <= 32'h0004; 
             end
-        else 
+        else if(!StallD) 
             begin
                InstrF_reg <= InstrF;
                PCF_reg <= PCF; 
