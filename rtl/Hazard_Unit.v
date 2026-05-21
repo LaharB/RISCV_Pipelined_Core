@@ -1,7 +1,7 @@
 module Hazard_Unit(
     input rst, RegWriteW, RegWriteM,
     input [1:0] ResultSrcE,
-    input [4:0] RdM, RdW, Rs1E, Rs2E,
+    input [4:0] RdE, RdM, RdW, Rs1E, Rs2E,
     input [4:0] Rs1D, Rs2D,
     //for forwarding
     output [1:0] ForwardAE, ForwardBE

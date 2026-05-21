@@ -6,8 +6,7 @@ module Fetch_Stage(
     input [31:0] PCTargetE, 
 
     //coming from Hazard Unit 
-    input StallF, 
-    input StallD, 
+    input StallF, StallD, 
 
     //going to Decode stage
     output [31:0] InstrD, 

@@ -26,7 +26,8 @@ module Pipelined_top(
     wire [4:0] RdW_wire, RdE_wire, RdM_wire;
 
     //wires for Hazard Unit
-    wire [4:0] Rs1E_wire, Rs2E_wire;
+    wire StallF_wire, StallD_wire, FlushE_wire;
+    wire [4:0] Rs1D_wire, Rs2D_wire, Rs1E_wire, Rs2E_wire;
     wire [1:0] ForwardAE_wire, ForwardBE_wire;
 
     //Fetch_Stage module 
@@ -38,6 +39,9 @@ module Pipelined_top(
         .InstrD(InstrD_wire),
         .PCD(PCD_wire), 
         .PCPlus4D(PCPlus4D_wire)
+        //for Hazard_unit
+        .StallF(StallF_wire), 
+        .StallD(StallD_wire),
     );
 
     //Decode_Stage module 
@@ -64,8 +68,13 @@ module Pipelined_top(
         .PCE(PCE_wire), 
         .PCPlus4E(PCPlus4E_wire),
         //for Hazard_Unit
+        //forwarding 
         .Rs1E(Rs1E_wire),
         .Rs2E(Rs2E_wire)
+        //stalling
+        .FlushE(FlushE_wire)
+        .Rs1D(Rs1D_wire), 
+        .Rs2D(Rs2D_wire)
     );
 
     //Execute_Stage module
@@ -138,7 +147,15 @@ module Pipelined_top(
         .Rs1E(Rs1E_wire), 
         .Rs2E(Rs2E_wire),
         .ForwardAE(ForwardAE_wire), 
-        .ForwardBE(ForwardBE_wire)
+        .ForwardBE(ForwardBE_wire),
+        //stalling
+        .ResultSrcE(ResultSrcE_wire),
+        .Rs1D(Rs1D_wire), 
+        .Rs2D(Rs2D_wire),
+        .RdE(RdE_wire),
+        .StallF(StallF_wire),
+        .StallD(StallD_wire),
+        .FlushE(FlushE_wire)
     );
 
 endmodule
