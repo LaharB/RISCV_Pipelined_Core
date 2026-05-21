@@ -20,7 +20,7 @@ module Decode_Stage(
     output [4:0] RdE,
     output [31:0] PCE, PCPlus4E,
     //output ports for Hazard_unit signals
-    output [4:0] Rs1E, Rs2E
+    output [4:0] Rs1E, Rs2E,
     //for stalling 
     output Rs1D, Rs2D 
 );

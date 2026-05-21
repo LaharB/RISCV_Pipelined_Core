@@ -33,7 +33,7 @@ module Fetch_Stage(
         .clk(clk), 
         .rst(rst),
         .PC_Next(PCF_),
-        .PC(PCF)
+        .PC(PCF),
         //from Hazard_Unit
         .en(StallF),
     );
