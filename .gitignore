@@ -25,6 +25,7 @@ transcript
 wlft*
 wave.do
 wave_HazardUnit.do
+wave_HazardUnit_temp.do
 
 # Ignore compilation databases and temporary files
 *.vstf
