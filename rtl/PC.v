@@ -1,7 +1,9 @@
 module PC(
     input clk, rst,
-    //for Hazard Unit - Stalling 
-    input en, //active low enable 
+
+    //comign from Hazard Unit - Stalling 
+    input en, //active low enable
+     
     input [31:0] PC_Next,
     output reg [31:0] PC
 );

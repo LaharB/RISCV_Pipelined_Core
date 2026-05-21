@@ -4,6 +4,8 @@ module Fetch_Stage(
     //coming from Execute stage
     input PCSrcE,
     input [31:0] PCTargetE, 
+
+    //coming from 
     
     //going to Decode stage
     output [31:0] InstrD, 
@@ -29,6 +31,7 @@ module Fetch_Stage(
     PC PC(
         .clk(clk), 
         .rst(rst),
+        .en(),
         .PC_Next(PCF_),
         .PC(PCF)
     );
