@@ -146,7 +146,7 @@ module Decode_Stage(
     assign ResultSrcE = ResultSrcD_reg; 
     assign ALUControlE = ALUControlD_reg; 
     assign RD1E = RD1D_reg; 
-    assign RD2E = RD1D_reg; 
+    assign RD2E = RD2D_reg; 
     assign ImmExtE = ImmExtD_reg; 
     assign RdE = RdD_reg;
     assign PCE = PCD_reg; 
