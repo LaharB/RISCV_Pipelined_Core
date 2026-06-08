@@ -75,7 +75,49 @@ So now, following are the types of Instructions supported by the design:
 
 ## Pipeline Hazards and Resolutions
 
+1. **Data Hazards** 
+- These occur when an instruction depends on the result of a preceding instruction that has not yet completed its write-back phase.
+   
+- Resolution: Implementing Data Forwarding (or bypassing) routes the ALU output or memory data directly back to the ALU inputs, avoiding the wait for the WB stage. For "load-use" data hazards, where forwarding isn't enough, a TStalling functionality is used to stall the pipeline (inserting a "bubble" or NOP) for one cycle.
 
+1. **Structural Hazards** 
 
-Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique. 
-The schematic design and simulation has been carried out by using the Siemens Questasim 10.7c Simulator.
+- These happen when hardware resources are insufficient to support all simultaneous instruction combinations (e.g., a single memory port for both instruction fetch and data access).
+
+- Resolution: Utilizing a Harvard architecture, which separates Instruction Memory and Data Memory, inherently prevents structural hazards related to memory access.
+  
+1. **Control Hazards**
+ 
+- These arise from branch and jump instructions that modify the PC. The pipeline might fetch incorrect instructions before the branch condition and target address are fully resolved in the EX stage.
+
+- Resolution: To handle this, the pipeline must flush the incorrect instructions that entered the IF and ID stages. More advanced designs might include static or dynamic branch prediction to minimize these flushes.
+
+Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique.It doesnt resolve any control hazard if it occurs.
+
+------------------------------------------------------
+
+## Sample Instruction Code
+
+The following set of instructions have been simulated in single-cycle core :
+
+### Sample Code 1
+
+```asm
+00500293 // addi x5, x0, 0x5 
+00300313 // addi x6, x0, 0x3
+006283B3 // add x7, x5, x6
+00002403 // lw x8, 0x0(x0)
+00100493 // addi x9, x0, 0x1
+00940533 // add x10, x8, x9
+```
+### Sample Code 2
+
+```asm
+00500293 // addi x5, x0, 0x5 
+00300313 // addi x6, x0, 0x3 
+006283B3 // add x7, x5, x6 
+02702423 // sw x7, 40(x0) 
+02802403 // lw x8, 40(x0) 
+00140493 // addi x9, x8, 0x1 
+00848533 // add x10, x9, x8
+```
