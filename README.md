@@ -39,29 +39,43 @@ The classic RISC-V pipeline is divided into five stages where each of these stag
 
 ## Supported Instructions 
 
-Some modifications have been done in the Main Decoder and Immediate Extend logic (shown in the following truth tables) to support **I-Type ALU** instructions as well as **J-Type instrcution(jal)**.
+Some modifications have been done in the Main Decoder and Immediate Extend logic (shown in the following truth tables respectively) to support **I-Type ALU** instructions as well as **J-Type instrcution(jal)**.
 
-Main Decoder and Immediate Extender work according to the following truth tables respectively now -
+### Main Decoder truth table enhanced to support I-type ALU and jal
 
+| Instruction | Opcode | RegWrite | ImmSrc | ALUSrc | MemWrite | ResultSrc | Branch | ALUOp | Jump |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `lw` | 0000011 | 1 | 00 | 1 | 0 | 01 | 0 | 00 | 0 |
+| `sw` | 0100011 | 0 | 01 | 1 | 1 | xx | 0 | 00 | 0 |
+| `R-type` | 0110011 | 1 | xx | 0 | 0 | 00 | 0 | 10 | 0 |
+| `beq` | 1100011 | 0 | 10 | 0 | 0 | xx | 1 | 01 | 0 |
+| `I-type ALU` | 0010011 | 1 | 00 | 1 | 0 | 00 | 0 | 10 | 0 |
+| `jal` | 1101111 | 1 | 11 | x | 0 | 10 | 0 | xx | 1 |
 
+---
 
+### ImmSrc encoding
 
+| ImmSrc | ImmExt | Type | Description |
+| :---: | :--- | :---: | :--- |
+| 00 | `{{20{Instr[31]}}, Instr[31:20]}` | I | 12-bit signed immediate |
+| 01 | `{{20{Instr[31]}}, Instr[31:25], Instr[11:7]}` | S | 12-bit signed immediate |
+| 10 | `{{20{Instr[31]}}, Instr[7], Instr[30:25], Instr[11:8], 1'b0}` | B | 13-bit signed immediate |
+| 11 | `{{12{Instr[31]}}, Instr[19:12], Instr[20], Instr[30:21], 1'b0}` | J | 21-bit signed immediate |
 
-
-
-
-
-
-
-
-
-Following are the types of Instructions supported by the design:
+So now, following are the types of Instructions supported by the design:
 
 - R-type(add, sub, and, or)
 - I-type(addi, subi, andi, ori, lw)
 - S-type(sw)
 - B-type(beq)
 - J-type(jal)
+  
+-------------------------------------------------------
+
+## Pipeline Hazards and Resolutions
+
+
 
 Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique. 
 The schematic design and simulation has been carried out by using the Siemens Questasim 10.7c Simulator.
