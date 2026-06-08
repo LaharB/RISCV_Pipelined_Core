@@ -175,6 +175,7 @@ The simulations have been performed using using Questasim 10.7c.
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part1.png)
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part2.png)  
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part3.png)
+![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part4.png)
 
 </details>
 
