@@ -121,3 +121,16 @@ The following set of instructions have been simulated in single-cycle core :
 00140493 // addi x9, x8, 0x1 
 00848533 // add x10, x9, x8
 ```
+------------------------------------------------------
+<details><summary>Simulation</summary><br>
+
+
+
+</details>
+
+
+
+   
+
+
+
