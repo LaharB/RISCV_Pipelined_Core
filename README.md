@@ -102,6 +102,8 @@ The following set of instructions have been simulated in single-cycle core :
 
 ### Sample Code 1
 
+This code will produce Data Hazard situation.
+
 ```asm
 00500293 // addi x5, x0, 0x5 
 00300313 // addi x6, x0, 0x3
@@ -111,6 +113,8 @@ The following set of instructions have been simulated in single-cycle core :
 00940533 // add x10, x8, x9
 ```
 ### Sample Code 2
+
+This code will produce Data Hazard situation as there is a dependency of the addi instruction just after the lw instruction.
 
 ```asm
 00500293 // addi x5, x0, 0x5 
@@ -122,9 +126,36 @@ The following set of instructions have been simulated in single-cycle core :
 00848533 // add x10, x9, x8
 ```
 ------------------------------------------------------
+<details><summary>Schematics</summary><br>
+
+The schematics have been generated using Questasim 10.7c 
+
+1. Pipelined Processor Core without **Hazard Unit**  
+![alt text](docs/Schematic/Schematic_without_Hazard_Unit.png)
+
+1. Pipelined Processor Core with **Hazard Unit but no Stalling Functionality**
+![alt text](docs/Schematic/Schematic_with_Hazard_Unit.png)
+
+1. Pipelined Processor Core with **Hazard Unit with Stalling Functionality**
+![alt text](docs/Schematic/Schematic_with_Hazard_Unit_2.png)
+
+</details>
+
+-------------------------------------------------------------
+
 <details><summary>Simulation</summary><br>
 
+The simulations have been performed using using Questasim 10.7c.
 
+1. Without Hazard Unit
+
+![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part1.png)
+![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part2.png)
+
+2. With Hazard Unit but no Stalling Funtionality
+
+- Sample Code 1 
+  
 
 </details>
 
