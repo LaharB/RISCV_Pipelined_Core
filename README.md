@@ -147,17 +147,34 @@ The schematics have been generated using Questasim 10.7c
 
 The simulations have been performed using using Questasim 10.7c.
 
-1. Without Hazard Unit
+1. Without any Hazard Unit
 
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part1.png)
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part2.png)
 
-2. With Hazard Unit but no Stalling Funtionality
+2. Hazard Unit without any Stalling Funtionality
 
 - Sample Code 1 
+
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_1/Waveform_with_HazardUnit_Part1.png)
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_1/Waveform_with_HazardUnit_Part2.png)
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_1/Waveform_with_HazardUnit_Part3.png)
+
+- Sample Code 2
   
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_2/Waveform_with_HazardUnit_NoStalling_Part1.png)
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_2/Waveform_with_HazardUnit_NoStalling_Part2.png)
+![alt text](docs/Waveform/With_Hazard_Unit/Without_Stalling_Functionality/Instruction_set_2/Waveform_with_HazardUnit_NoStalling_Part3.png)
+
+3. Hazard Unit with Stalling Funtionality 
+
+![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part1.png)
+![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part2.png)  
+![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part3.png)
 
 </details>
+
+
 
 
 
