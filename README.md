@@ -149,10 +149,12 @@ The simulations have been performed using using Questasim 10.7c.
 
 1. Without any Hazard Unit
 
+- Sample Code 1
+
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part1.png)
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part2.png)
 
-2. Hazard Unit without any Stalling Funtionality
+1. Hazard Unit without any Stalling Funtionality
 
 - Sample Code 1 
 
@@ -168,17 +170,24 @@ The simulations have been performed using using Questasim 10.7c.
 
 3. Hazard Unit with Stalling Funtionality 
 
+- Sample Code 2
+
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part1.png)
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part2.png)  
 ![alt text](docs/Waveform/With_Hazard_Unit/With_Stalling_Functionality/Instruction_set_2/Waveform_with_stalling_Part3.png)
 
 </details>
 
+-----------------------------------------
 
+## Simulation Steps
 
+To compile the RTL and simulate the design , run the run.do file in Questasim.
 
+------------------------------------------
 
-   
+## References & Acknowledgments
 
+This project was built with reference to the following materials:
 
-
+S. L. Harris and D. M. Harris, Digital Design and Computer Architecture: RISC-V Edition. Morgan Kaufmann, 2022.
