@@ -66,7 +66,7 @@ Some modifications have been done in the Main Decoder and Immediate Extend logic
 So now, following are the types of Instructions supported by the design:
 
 - R-type(add, sub, and, or)
-- I-type(addi, subi, andi, ori, lw)
+- I-type(addi, andi, ori, lw)
 - S-type(sw)
 - B-type(beq)
 - J-type(jal)
