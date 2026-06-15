@@ -51,7 +51,7 @@ The classic RISC-V pipeline is divided into five stages where each of these stag
 
 ## Supported Instructions 
 
-Some modifications have been done in the Main Decoder and Immediate Extend logic (shown in the following truth tables respectively) to support **I-Type ALU** instructions as well as **J-Type instrcution(jal)**.
+Some modifications have been done in the Main Decoder and Immediate Extend logic (shown in the following truth tables respectively) to support **I-Type ALU** instructions as well as **J-Type instruction(jal)**.
 
 ### Main Decoder truth table enhanced to support I-type ALU and jal
 
