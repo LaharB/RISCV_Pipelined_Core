@@ -1,6 +1,6 @@
 # RISC-V Pipelined Core Implementation
 
-This project showcases the design and implementation of a RISC-V Pipelined Core processor with Hazard Unit using Verilog HDL.The RTL schematic has been designed and simulation has been performed using Siemens Questasim 10.7c.
+This project showcases the design and implementation of a RISC-V Pipelined Core processor with Hazard Unit using Verilog HDL. The RTL schematic has been designed and simulation has been performed using Siemens Questasim 10.7c.
 
 It is the modification of the previously designed [RISC-V Single Cycle Core processor](https://github.com/LaharB/RISCV_Single_Cycle_Core) where the processor executes a complete instruction in one clock cycle *(The time period of the clock cycle is decided by the execution time of the slowest instruction which is generally the loadWord instruction.)*
 
@@ -92,7 +92,7 @@ So now, following are the types of Instructions supported by the design:
 
 - Resolution: To handle this, the pipeline must flush the incorrect instructions that entered the IF and ID stages. More advanced designs might include static or dynamic branch prediction to minimize these flushes.
 
-Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique.It doesnt resolve any control hazard if it occurs.
+Currently, the processor supports Data Hazards resolution using Forwarding/Bypassing and Stalling technique. It does not resolve any control hazard if it occurs.
 
 ------------------------------------------------------
 
