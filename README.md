@@ -6,7 +6,19 @@ It is the modification of the previously designed [RISC-V Single Cycle Core proc
 
 It is based on the **RV32I Base Integer Instruction Set Architecture** where the processor processes 32-bit wide data and instructions.
 
----------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+
+## Features
+
+- Architecture: 32-bit RISC-V (RV32I)
+
+- Pipeline: 5-Stage (IF, ID, EX, MEM, WB)
+
+- Hazard Handling: Data Forwarding & Stalling (Load-Use)
+
+- Verification: Siemens Questasim 10.7c
+
+----------------------------
 
 ## What is pipelining ?
 
