@@ -98,7 +98,7 @@ Currently, the processor supports Data Hazards resolution using Forwarding/Bypas
 
 ## Sample Instruction Code
 
-The following set of instructions have been simulated in single-cycle core :
+The following set of instructions have been simulated in the 5-Stage Pipelined core :
 
 ### Sample Code 1
 
