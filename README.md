@@ -90,7 +90,7 @@ So now, following are the types of Instructions supported by the design:
 ### **Data Hazards** 
 - These occur when an instruction depends on the result of a preceding instruction that has not yet completed its write-back phase.
    
-- Resolution: Implementing Data Forwarding (or bypassing) routes the ALU output or memory data directly back to the ALU inputs, avoiding the wait for the WB stage. For "load-use" data hazards, where forwarding isn't enough, a TStalling functionality is used to stall the pipeline (inserting a "bubble" or NOP) for one cycle.
+- Resolution: Implementing Data Forwarding (or bypassing) routes the ALU output or memory data directly back to the ALU inputs, avoiding the wait for the WB stage. For "load-use" data hazards, where forwarding isn't enough, a Stalling functionality is used to stall the pipeline (inserting a "bubble" or NOP) for one cycle.
 
 ### **Structural Hazards** 
 
