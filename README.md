@@ -87,18 +87,18 @@ So now, following are the types of Instructions supported by the design:
 
 ## Pipeline Hazards and Resolutions
 
-1. **Data Hazards** 
+### **Data Hazards** 
 - These occur when an instruction depends on the result of a preceding instruction that has not yet completed its write-back phase.
    
 - Resolution: Implementing Data Forwarding (or bypassing) routes the ALU output or memory data directly back to the ALU inputs, avoiding the wait for the WB stage. For "load-use" data hazards, where forwarding isn't enough, a TStalling functionality is used to stall the pipeline (inserting a "bubble" or NOP) for one cycle.
 
-1. **Structural Hazards** 
+### **Structural Hazards** 
 
 - These happen when hardware resources are insufficient to support all simultaneous instruction combinations (e.g., a single memory port for both instruction fetch and data access).
 
 - Resolution: Utilizing a Harvard architecture, which separates Instruction Memory and Data Memory, inherently prevents structural hazards related to memory access.
   
-1. **Control Hazards**
+### **Control Hazards**
  
 - These arise from branch and jump instructions that modify the PC. The pipeline might fetch incorrect instructions before the branch condition and target address are fully resolved in the EX stage.
 
@@ -145,10 +145,10 @@ The schematics have been generated using Questasim 10.7c
 1. Pipelined Processor Core without **Hazard Unit**  
 ![alt text](docs/Schematic/Schematic_without_Hazard_Unit.png)
 
-1. Pipelined Processor Core with **Hazard Unit but no Stalling Functionality**
+2. Pipelined Processor Core with **Hazard Unit but no Stalling Functionality**
 ![alt text](docs/Schematic/Schematic_with_Hazard_Unit.png)
 
-1. Pipelined Processor Core with **Hazard Unit with Stalling Functionality**
+3. Pipelined Processor Core with **Hazard Unit with Stalling Functionality**
 ![alt text](docs/Schematic/Schematic_with_Hazard_Unit_2.png)
 
 </details>
@@ -166,7 +166,7 @@ The simulations have been performed using using Questasim 10.7c.
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part1.png)
 ![alt text](docs/Waveform/Without_Hazard_Unit/Waveform_without_HazardUnit_Part2.png)
 
-1. Hazard Unit without any Stalling Funtionality
+2. Hazard Unit without any Stalling Funtionality
 
 - Sample Code 1 
 
